@@ -95,9 +95,7 @@ export default {
 }
 
 .task {
- 
-
-  cursor: pointer;
+   cursor: pointer;
 }
 
 .completed {
