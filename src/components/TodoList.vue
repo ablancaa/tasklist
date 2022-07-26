@@ -13,7 +13,7 @@
         :key="'task' + i"
         :class="{completed: task.completed}"
         @click="completeTask(task.text)"
-      >{{task.text}} - <button  @click="deleteTask(task.text)"> Borrar </button></li>
+      >{{task.text}} - <button  @click="deleteTask(task.text)"><img src="../assets/basura.png" height="20"/></button></li>
     </ul>
   </div>
 </template>
@@ -47,7 +47,7 @@ export default {
       for (let i = 0; i < this.tasks.length; i++) {
         let task = this.tasks[i];
         if (taskText === task.text) {
-          task.completed = !task.completed;
+          task.completed == task.completed;
           this.tasks.splice(i,1);
         }
       }
@@ -62,6 +62,7 @@ export default {
   max-width: 100%;
   margin: 0px auto;
 }
+
 .form {
   background: white;
   border-radius: 12px;
@@ -90,11 +91,15 @@ export default {
 .list {
   margin-top: 40px;
   margin-right: 200px;
+  text-align: left;
 }
+
 .task {
+ 
+
   cursor: pointer;
-  margin: 10px 0;
 }
+
 .completed {
   text-decoration: line-through;
   color: lightgrey;
