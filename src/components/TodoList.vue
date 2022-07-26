@@ -13,7 +13,7 @@
         :key="'task' + i"
         :class="{completed: task.completed}"
         @click="completeTask(task.text)"
-      >{{task.text}} - <button  @click="deleteTask(task.text)"><img src="../assets/basura.png" height="20"/></button></li>
+      >{{task.text}} - <button  @click="deleteTask(task.text, task.completed)"><img src="../assets/basura.png" height="20"/></button></li>
     </ul>
   </div>
 </template>
@@ -23,7 +23,13 @@ export default {
   name: "TodoList",
   data: () => ({
     newTask: "",
-    tasks: []
+    tasks: [{text: 'Una prueba 1', completed: false},
+            {text: 'Una prueba 2', completed: false},
+            {text: 'Una prueba 3', completed: false},
+            {text: 'Una prueba 4', completed: false},
+            {text: 'Una prueba 5', completed: false},
+            {text: 'Una prueba 6', completed: false}
+            ]
   }),
   methods: {
     createTask() {
@@ -43,15 +49,30 @@ export default {
         }
       }
     },
-    deleteTask (taskText){
+    deleteTask (taskText, completed){
       for (let i = 0; i < this.tasks.length; i++) {
         let task = this.tasks[i];
         if (taskText === task.text) {
-          task.completed == task.completed;
-          this.tasks.splice(i,1);
+         
+          this.tasks.splice(i,1); 
+          
+          console.log(i);
+          console.log(completed);
+          console.log(this.tasks);
+          console.log(this.tasks.length);
+          let nuevoArray = this.tasks[i];
+          
+            nuevoArray.completed = true;
+          
+          
+          console.log(nuevoArray);
         }
+   
       }
+      console.log(completed);
+      
     }
+
   }
 };
 </script>
