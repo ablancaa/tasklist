@@ -1,6 +1,6 @@
 <template>
   <div class="task-list">
-    <h1>{{tasks.length}} TASKS</h1>
+    <h1>{{tasks.length}} Tasks</h1>
     <form class="form" @submit.prevent="createTask">
       <label class="label" for="task">Nueva tarea:</label>
       <input class="input" type="text" v-model="newTask" id="task" />
